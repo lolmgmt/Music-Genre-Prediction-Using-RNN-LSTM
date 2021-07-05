@@ -1,4 +1,5 @@
 import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 import json
 import tensorflow as tf
 from sklearn.model_selection import train_test_split
@@ -64,7 +65,7 @@ if __name__ == "__main__":
 
     model.summary()
 
-    """
+
     # train model
     history = model.fit(x_train, y_train, validation_data=(x_val, y_val), batch_size=32, epochs=50)
 
@@ -77,7 +78,6 @@ if __name__ == "__main__":
 
     model.save("model_RNN_LSTM.h5")
     print("Saved model to disk")
-    """
 
-    model = tf.keras.models.load_model("model_RNN_LSTM.h5")
-    print(model.predict(x_test[100]))
+    # model = tf.keras.models.load_model("model_RNN_LSTM.h5")
+    # print(model.predict(x_test[100]))
