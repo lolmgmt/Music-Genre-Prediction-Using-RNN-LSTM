@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 import numpy as np
 import matplotlib.pyplot as plt
 
-data_path = "data_json"
+data_path = "data.json"
 
 def load_data(data_path):
     print("Data loading\n")
