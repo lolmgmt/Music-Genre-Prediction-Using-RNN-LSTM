@@ -57,16 +57,15 @@ if __name__ == "__main__":
     model = build_model(input_shape)
 
     # compile model
-    optimiser = tf.keras.optimizers.Adam(lr=0.001)
+    optimiser = tf.keras.optimizers.Adam(learning_rate=0.001)
     model.compile(optimizer=optimiser,
                   loss='sparse_categorical_crossentropy',
                   metrics=['accuracy'])
 
     model.summary()
 
-    """
     # train model
-    history = model.fit(x_train, y_train, validation_data=(x_val, y_val), batch_size=32, epochs=50)
+    history = model.fit(x_train, y_train, validation_data=(x_val, y_val), batch_size=32, epochs=25)
 
     # plot accuracy/error for training and validation
     #plot_history(history)
@@ -77,7 +76,6 @@ if __name__ == "__main__":
 
     model.save("model_RNN_LSTM.h5")
     print("Saved model to disk")
-    """
 
-    model = tf.keras.models.load_model("model_RNN_LSTM.h5")
-    print(model.predict(x_test[100]))
+    # model = tf.keras.models.load_model("model_RNN_LSTM.h5")
+    # print(model.predict(x_test[100]))

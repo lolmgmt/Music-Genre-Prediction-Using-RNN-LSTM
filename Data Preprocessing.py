@@ -22,7 +22,6 @@ def preprocess(dataset_path,json_path,num_mfcc=13,n_fft=2048,hop_length=512,num_
             "mfcc": []
     }
 
-
     samples_per_segment = int(samples_per_track / num_segment)
     num_mfcc_vectors_per_segment = math.ceil(samples_per_segment / hop_length)
 
@@ -34,7 +33,7 @@ def preprocess(dataset_path,json_path,num_mfcc=13,n_fft=2048,hop_length=512,num_
             label = dirpath.split('/')[-1]
             data["mapping"].append(label)
 
-            print("\nInside ",label)
+            print("\nCurrently processing:",label)
 
             #Gping through each song within a label
             for f in filenames:

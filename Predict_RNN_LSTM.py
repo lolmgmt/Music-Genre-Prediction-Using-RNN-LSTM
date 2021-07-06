@@ -3,8 +3,8 @@ import librosa
 from mp3towav import convert_to_wav
 
 ###########################################################################
-just_path = "genres/blues/"
-song_path = "genres/blues/1.wav"
+just_path = "Data/genres_original/blues"
+song_path = "/code/test_data/wiz-khalifa-on-my-level.mp3"
 song_name = "1"
 ##########################################################################
 
